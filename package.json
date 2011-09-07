@@ -1,0 +1,13 @@
+{
+	"author": "T. Jameson Little <t.jameson.little@gmail.com>",
+	"name": "toDataURL",
+	"description": "Download something in the browser as a file",
+	"keywords": ["ender", "dataURL", "download"],
+	"version": "0.0.1",
+	"repository": {
+        "type": "git",
+		"url": "https://github.com/beatgammit/toDataURL.git"
+	},
+	"dependencies": {},
+    "main": "src/download.js"
+}
