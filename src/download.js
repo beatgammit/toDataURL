@@ -28,25 +28,21 @@
 			output += tripletToBase64(temp);
 		}
 
+		// pad the end with zeros, but make sure to not forget the extra bytes
 		switch (extraBytes) {
 			case 1:
-				output += 'AA';
-				break;
-			case 2:
-				output += 'A';
-				break;
-		}
-
-		// this prevents an ERR_INVALID_URL in Chrome (Firefox okay)
-		switch (output.length % 4) {
-			case 1:
-				output += '=';
-				break;
-			case 2:
+				temp = uint8[uint8.length - 1];
+				output += lookup[temp >> 2];
+				output += lookup[(temp << 4) & 0x3F];
 				output += '==';
 				break;
-			default:
-			break;
+			case 2:
+				temp = (uint8[uint8.length - 2] << 8) + (uint8[uint8.length - 1]);
+				output += lookup[temp >> 10];
+				output += lookup[(temp >> 4) & 0x3F];
+				output += lookup[(temp << 2) & 0x3F];
+				output += '=';
+				break;
 		}
 
 		return output;
