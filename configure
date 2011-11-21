@@ -1,8 +1,5 @@
 #/bin/sh
 
-if [ ! -d "js" ]
-then
-    mkdir js
-fi
 cd js
-ender build jeesh toDataURL
+pakmanager build
+cd -

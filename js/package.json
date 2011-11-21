@@ -1,0 +1,13 @@
+{
+	"author": "",
+	"name": "js",
+	"version": "0.0.0",
+	"main": "./main.js",
+	"dependencies": {
+		"qwery": "~2",
+		"bonzo": "*",
+		"bean": "*",
+		"domready": "*"
+	},
+	"devDependencies": {}
+}
